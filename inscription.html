@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscription - Léman Poker & Casino</title>
+  <style>
+    /* === BASE === */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f8f9fa;
+    }
+
+    /* === HEADER === */
+    header {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      color: #fff;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .site-title {
+      font-size: 1.6rem;
+      color: #ffd700;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover { color: #ffd700; }
+
+    .nav-cta {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .btn {
+      padding: 0.6rem 1.5rem;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: all 0.3s;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: #ffd700;
+      color: #1a1a1a;
+    }
+
+    .btn-primary:hover {
+      background: #ffed4e;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #fff;
+      border: 2px solid #ffd700;
+    }
+
+    .btn-secondary:hover {
+      background: #ffd700;
+      color: #1a1a1a;
+    }
+
+    /* === FORMULAIRE === */
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding-top: 120px;
+      padding-bottom: 60px;
+      background: linear-gradient(135deg, #000, #111);
+    }
+
+    .form-container {
+      background: #fff;
+      padding: 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+      max-width: 500px;
+      width: 100%;
+      text-align: left;
+    }
+
+    .form-container h1 {
+      color: #c00000;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .form-container p {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #555;
+    }
+
+    .signup-form label {
+      display: block;
+      margin: 10px 0 5px;
+      color: #222;
+      font-weight: 600;
+    }
+
+    .signup-form input,
+    .signup-form select,
+    .signup-form textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      font-size: 15px;
+    }
+
+   .signup-form button {
+  width: 100%;
+  background-color: #ffd700;   /* même doré que bouton menu */
+  color: #1a1a1a;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.signup-form button:hover {
+  background-color: #ffed4e;   /* effet hover doré clair */
+  transform: translateY(-2px);
+}
+
+
+    /* === FOOTER === */
+    footer {
+      background: #1a1a1a;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    footer p { margin-bottom: 1rem; }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-links a {
+      color: #ffd700;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover { color: #ffed4e; }
+
+    /* === RESPONSIVE === */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: #1a1a1a;
+        width: 100%;
+        padding: 1rem 0;
+      }
+
+      nav ul.active { display: flex; }
+
+      .mobile-menu-btn { display: block; }
+
+      .logo-img { width: 40px; height: 40px; }
+
+      .site-title { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <div class="logo-container">
+        <img src="logo-lémon-poker.jpg" alt="Logo Léman Poker" class="logo-img">
+        <h1 class="site-title">Léman Poker & Casino</h1>
+      </div>
+
+      <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+
+      <ul id="navMenu">
+        <li><a href="acceuil.html">Accueil</a></li>
+        <li><a href="horaires.html">Horaires</a></li>
+        <li><a href="tournoi.html">Tournois</a></li>
+        <li><a href="formation.html">Formations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="connexion.html" class="btn btn-secondary">Se connecter</a>
+        <a href="inscription.html" class="btn btn-primary">Inscription</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- FORMULAIRE INSCRIPTION -->
+  <main>
+    <section class="form-container">
+      <h1>Inscription Tournoi de Poker</h1>
+      <p>Remplissez le formulaire pour participer à nos prochains tournois.</p>
+
+      <form action="#" method="POST" class="signup-form">
+        <label for="nom">Nom complet :</label>
+        <input type="text" id="nom" name="nom" placeholder="Entrez votre nom" required>
+
+        <label for="email">Adresse e-mail :</label>
+        <input type="email" id="email" name="email" placeholder="exemple@mail.com" required>
+
+        <label for="telephone">Téléphone :</label>
+        <input type="tel" id="telephone" name="telephone" placeholder="(+216) 00 000 000" required>
+
+        <label for="tournoi">Choisissez un tournoi :</label>
+        <select id="tournoi" name="tournoi" required>
+          <option value="">-- Sélectionnez un tournoi --</option>
+          <option value="texas">Texas Hold'em - Samedi soir</option>
+          <option value="omaha">Omaha Poker - Dimanche après-midi</option>
+          <option value="vip">Tournoi VIP - Vendredi soir</option>
+        </select>
+
+        <label for="message">Message (optionnel) :</label>
+        <textarea id="message" name="message" rows="4" placeholder="Votre message..."></textarea>
+
+        <button type="submit">S'inscrire</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+<footer>
+        <p>&copy; 2025 Léman Poker & Casino. Tous droits réservés.</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61550649364939">Facebook</a>
+            <a href="https://www.instagram.com/lemanpokercasino/">Instagram</a>
+            <a href="https://ch.linkedin.com/company/l%C3%A9man-poker-casino-formation">Linkedin</a>
+        </div>
+    </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('navMenu');
+      menu.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

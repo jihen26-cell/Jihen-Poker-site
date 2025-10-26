@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horaires - Léman Poker & Casino</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Même style que l’accueil */
+    * {margin:0;padding:0;box-sizing:border-box;}
+    body {font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;line-height:1.6;background:#f8f9fa;color:#333;}
+
+    header {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      color: #fff;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .site-title {
+      font-size: 1.6rem;
+      color: #ffd700;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    ul li a:hover {
+      color: #ffd700;
+    }
+
+    .btn {
+      padding: 0.6rem 1.5rem;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: all 0.3s;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: #ffd700;
+      color: #1a1a1a;
+    }
+
+    .btn-primary:hover {
+      background: #ffed4e;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #fff;
+      border: 2px solid #ffd700;
+    }
+
+    .btn-secondary:hover {
+      background: #ffd700;
+      color: #1a1a1a;
+    }
+
+    main {
+      padding: 120px 2rem 4rem;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    h1 {
+      color: #1a1a1a;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .horaires-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 3rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .horaires-table th, .horaires-table td {
+      padding: 1rem;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .horaires-table th {
+      background: #1a1a1a;
+      color: #ffd700;
+      text-transform: uppercase;
+      font-size: 1rem;
+    }
+
+    .horaires-table tr:nth-child(even) {
+      background: #f5f5f5;
+    }
+
+    .btn-inscription {
+      background: #ffd700;
+      color: #1a1a1a;
+      padding: 1rem 3rem;
+      font-weight: bold;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .btn-inscription:hover {
+      background: #ffed4e;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      background: #1a1a1a;
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    @media (max-width:768px) {
+      ul {flex-direction:column;gap:1rem;}
+      .horaires-table th, .horaires-table td {padding:0.8rem;}
+      h1 {font-size:2rem;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo-container">
+        <img src="logo-lémon-poker.jpg" alt="Logo Léman Poker" class="logo-img">
+        <h1 class="site-title">Lémon Poker & Casino</h1>
+      </div>
+      <ul>
+        <li><a href="acceuil.html">Accueil</a></li>
+        <li><a href="horaires.html">Horaires</a></li>
+        <li><a href="Tournois.html">Tournois</a></li>
+        <li><a href="formation.html">Formations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="connexion.html" class="btn btn-secondary">Se connecter</a>
+        <a href="inscription.html" class="btn btn-primary">Inscription</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Horaires du Casino</h1>
+    <p>Découvrez nos horaires d’ouverture et planifiez votre prochaine partie de poker dans une ambiance exceptionnelle.</p>
+
+    <table class="horaires-table">
+      <thead>
+        <tr>
+          <th>Jour</th>
+          <th>Ouverture</th>
+          <th>Fermeture</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Lundi</td><td>18h00</td><td>02h00</td></tr>
+        <tr><td>Mardi</td><td>18h00</td><td>02h00</td></tr>
+        <tr><td>Mercredi</td><td>18h00</td><td>02h00</td></tr>
+        <tr><td>Jeudi</td><td>18h00</td><td>03h00</td></tr>
+        <tr><td>Vendredi</td><td>18h00</td><td>04h00</td></tr>
+        <tr><td>Samedi</td><td>16h00</td><td>04h00</td></tr>
+        <tr><td>Dimanche</td><td>16h00</td><td>02h00</td></tr>
+      </tbody>
+    </table>
+
+    <a href="inscription.html" class="btn-inscription">S'inscrire à un tournoi</a>
+  </main>
+
+  <footer>
+        <p>&copy; 2025 Léman Poker & Casino. Tous droits réservés.</p>
+        <div class="social-links">
+             <a href="https://www.facebook.com/profile.php?id=61550649364939">Facebook</a>
+            <a href="https://www.instagram.com/lemanpokercasino/">Instagram</a>
+            <a href="https://ch.linkedin.com/company/l%C3%A9man-poker-casino-formation">Linkedin</a>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Léman Poker & Casino - Accueil</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #fff;
+            padding: 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.site-title {
+    font-size: 1.6rem;
+    color: #ffd700;
+    font-weight: bold;
+    margin: 0;
+}
+
+.menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #ffd700;
+}
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 0.5rem;
+    }
+
+    .logo-img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .site-title {
+        font-size: 1.3rem;
+    }
+}
+
+
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ffd700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: #fff;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.6rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #ffd700;
+            color: #1a1a1a;
+        }
+
+        .btn-primary:hover {
+            background: #ffed4e;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #ffd700;
+        }
+
+        .btn-secondary:hover {
+            background: #ffd700;
+            color: #1a1a1a;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23116530" width="1200" height="600"/><circle cx="200" cy="150" r="100" fill="%230d4d24" opacity="0.5"/><circle cx="800" cy="400" r="150" fill="%230d4d24" opacity="0.5"/><circle cx="1000" cy="200" r="80" fill="%230d4d24" opacity="0.5"/></svg>');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            margin-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #f0f0f0;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 2rem;
+            background: #f8f9fa;
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1a1a1a;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .feature-card p {
+            color: #666;
+        }
+
+        /* Tournaments Section */
+        .tournaments {
+            padding: 5rem 2rem;
+            background: #fff;
+        }
+
+        .tournaments-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tournament-card {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .tournament-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: #ffd700;
+        }
+
+        .tournament-details {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 2rem;
+            background: #f8f9fa;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: #ffd700;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #ffed4e;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #1a1a1a;
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .tournament-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo-container">
+    <img src="logo-lémon-poker.jpg" alt="Logo Léman Poker" class="logo-img">
+    <h1 class="site-title">Léman Poker & Casino</h1>
+  </div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <ul id="navMenu">
+                <li><a href="acceuil.html">Accueil</a></li>
+                <li><a href="horaires.html">Horaires</a></li>
+                <li><a href="Tournois.html">Tournois</a></li>
+				<li><a href="formation.html">Formations</a></li> <!-- 🆕 -->
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="connexion.html" class="btn btn-secondary">Se connecter</a>
+                <a href="inscription.html" class="btn btn-primary">Inscription</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Bienvenue au Léman Poker & Casino</h1>
+            <p>Vivez l'expérience ultime du poker dans une ambiance conviviale et professionnelle</p>
+            <div class="hero-buttons">
+                <a href="Réservation.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 0.8rem 2rem;">Réserver un tournoi</a>
+                <a href="Tournois.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 0.8rem 2rem;">Voir les tournois</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-container">
+            <h2 class="section-title">Pourquoi choisir Léman Poker & Casino?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Tournois Réguliers</h3>
+                    <p>Participez à nos tournois hebdomadaires avec des prix attractifs et une organisation professionnelle.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Ambiance Conviviale</h3>
+                    <p>Rejoignez une communauté de passionnés dans un cadre chaleureux et accueillant.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Tous Niveaux</h3>
+                    <p>Des tables pour débutants aux joueurs confirmés, tout le monde trouve sa place.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📅</div>
+                    <h3>Horaires Flexibles</h3>
+                    <p>Ouvert 7j/7 avec des sessions adaptées à votre emploi du temps.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🍸</div>
+                    <h3>Bar & Restauration</h3>
+                    <p>Profitez de notre service de bar et de restauration pendant vos parties.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎓</div>
+                    <h3>Coaching</h3>
+                    <p>Améliorez votre jeu avec nos sessions de coaching personnalisées.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tournaments Preview -->
+    <section class="tournaments">
+        <div class="tournaments-container">
+            <h2 class="section-title">Tournois à venir</h2>
+            <div class="tournament-card">
+                <div class="tournament-info">
+                    <h3>Tournoi Texas Hold'em</h3>
+                    <div class="tournament-details">
+                        <div class="detail-item">📅 Vendredi 20:00</div>
+                        <div class="detail-item">💰 Buy-in: 50€</div>
+                        <div class="detail-item">🏆 Prize Pool: 2000€</div>
+                    </div>
+                </div>
+                <a href="Réservation.html" class="btn btn-primary">Réserver</a>
+            </div>
+            <div class="tournament-card">
+                <div class="tournament-info">
+                    <h3>Tournoi Omaha</h3>
+                    <div class="tournament-details">
+                        <div class="detail-item">📅 Samedi 19:00</div>
+                        <div class="detail-item">💰 Buy-in: 75€</div>
+                        <div class="detail-item">🏆 Prize Pool: 3000€</div>
+                    </div>
+                </div>
+                <a href="reservation.html" class="btn btn-primary">Réserver</a>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="Tournois.html" class="btn btn-primary" style="padding: 1rem 3rem;">Voir tous les tournois</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Preview -->
+    <section class="contact">
+        <div class="contact-container">
+            <h2 class="section-title">Nous contacter</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📍 Adresse</h3>
+                    <p>123 Avenue du Casino<br>1000 Tunis, Tunisie</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📞 Téléphone</h3>
+                    <p>+216 XX XXX XXX</p>
+                </div>
+                <div class="contact-item">
+                    <h3>✉️ Email</h3>
+                    <p>contact@lemonpoker.tn</p>
+                </div>
+            </div>
+            <div style="margin-top: 2rem;">
+                <a href="contact.html" class="btn btn-primary" style="padding: 1rem 3rem;">Formulaire de contact</a>
+            </div>
+        </div>
+    </section>
+	<!-- Formations Section -->
+<section class="formations" style="padding:5rem 2rem; background:#f8f9fa;">
+  <div style="max-width:1200px; margin:auto;">
+    <h2 class="section-title">Nos Formations Poker</h2>
+    <p style="text-align:center; max-width:800px; margin:0 auto 3rem;">
+      Découvrez nos programmes de formation pour maîtriser les techniques du poker : stratégie, gestion de bankroll, lecture des adversaires et bien plus encore.
+    </p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🎓</div>
+        <h3>Initiation au Poker</h3>
+        <p>Apprenez les bases du Texas Hold’em, les règles, et les premières stratégies pour bien démarrer.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔥</div>
+        <h3>Stratégies Avancées</h3>
+        <p>Analyse de mains, calculs de cotes et lecture du jeu pour devenir un joueur redoutable.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💼</div>
+        <h3>Coaching Personnalisé</h3>
+        <p>Bénéficiez d’un accompagnement individuel avec nos coachs professionnels certifiés.</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:3rem;">
+      <a href="formation.html" class="btn btn-primary" style="padding:1rem 3rem;">Découvrir nos formations</a>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Léman Poker & Casino. Tous droits réservés.</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61550649364939">Facebook</a>
+            <a href="https://www.instagram.com/lemanpokercasino/">Instagram</a>
+            <a href="https://ch.linkedin.com/company/l%C3%A9man-poker-casino-formation">Linkedin</a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
